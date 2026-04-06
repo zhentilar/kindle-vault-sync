@@ -1,0 +1,17 @@
+{
+  "vault_path": "../kindle-jlpt-sync/vault",
+  "vocab_file": "japanese/jlpt_n5_pool.md",
+  "output_dir": "output",
+  "scan_days": 7,
+  "vocab_count": 5,
+  "include_patterns": ["**/*.md"],
+  "exclude_patterns": [],
+  "include_full_notes": true,
+  "preview_lines": 8,
+  "title_prefix": "Daily JLPT Brief",
+  "todo_title": "Last 7 Days Todo",
+  "notes_title": "Last 7 Days Notes",
+  "vocab_title": "JLPT N5 - 5 Words",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 465
+}

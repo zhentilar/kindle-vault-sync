@@ -1,0 +1,120 @@
+# Kindle Vault Sync (Public Template)
+
+Configurable Python tool that scans an Obsidian-style vault, merges:
+- random vocab items
+- unchecked todos
+- note content from recent files
+
+Then it generates an HTML digest and can email it as a Kindle attachment.
+
+## Features
+
+- Personal vault remains separate from this public template
+- Configurable scan window (for example, last 7 days)
+- Include and exclude file glob patterns
+- Full-note mode or preview-lines mode
+- Preview command (safe, no email)
+- Send command (email attachment)
+- Strong config validation with clear error messages
+- GitHub Actions CI with pytest
+
+## Project Structure
+
+- src/kindle_vault_sync: package source
+- config.example.json: sample configurable setup
+- .env.example: required secrets template
+- tests: basic test coverage
+
+## Requirements
+
+- Python 3.10+
+- Gmail app password (or another SMTP provider)
+
+## Safety and Validation
+
+- Invalid or missing config fields fail fast with actionable messages
+- Missing environment variables fail with the exact missing key name
+- Invalid numeric ranges (for example scan_days=0) are rejected
+
+## Quick Start
+
+1. Open folder:
+   - kindle-vault-sync-public
+2. Create virtual environment:
+   - python3 -m venv .venv
+   - source .venv/bin/activate
+3. Install package in editable mode:
+   - pip install -e .
+4. Copy config and env templates:
+   - cp config.example.json config.json
+   - cp .env.example .env
+5. Fill .env values:
+   - KVS_KINDLE_EMAIL
+   - KVS_SENDER_EMAIL
+   - KVS_APP_PASSWORD
+6. Update config.json:
+   - vault_path
+   - vocab_file
+   - scan_days
+   - include_patterns / exclude_patterns
+7. Export env values before run:
+   - set -a; source .env; set +a
+8. Preview without sending:
+   - kindle-vault-sync preview --config config.json
+9. Send to Kindle:
+   - kindle-vault-sync send --config config.json
+
+## Run Tests
+
+- pytest -q
+
+## Configuration Reference
+
+config.json fields:
+
+- vault_path: root vault directory
+- vocab_file: relative path inside vault for vocab pool
+- output_dir: html output folder
+- scan_days: only files modified in this window are scanned
+- vocab_count: random vocab item count
+- include_patterns: glob list to include files
+- exclude_patterns: glob list to exclude files
+- include_full_notes: true for full content, false for preview
+- preview_lines: used only when include_full_notes is false
+- title_prefix: digest title
+- vocab_title: vocab section heading
+- todo_title: todo section heading
+- notes_title: notes section heading
+- smtp_host: smtp server host
+- smtp_port: smtp server port
+
+## Example include and exclude patterns
+
+- include_patterns: ["**/*.md"]
+- exclude_patterns: ["archive/**", "templates/**", "**/private/*.md"]
+
+## Security Notes
+
+- Never commit .env
+- Never commit real email credentials
+- Keep app password scoped only to this automation use
+
+## Command Summary
+
+- Preview:
+  - kindle-vault-sync preview --config config.json
+- Send:
+  - kindle-vault-sync send --config config.json
+
+## Publishing
+
+- Before making the repository public, follow RELEASE_CHECKLIST.md.
+
+## Contributing
+
+- Contribution guide: CONTRIBUTING.md
+- Use GitHub issue templates for bug reports and feature requests.
+
+## License
+
+MIT. See LICENSE.

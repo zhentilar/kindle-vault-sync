@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/kindle_vault_sync/__init__.py
+src/kindle_vault_sync/brief.py
+src/kindle_vault_sync/cli.py
+src/kindle_vault_sync/config.py
+src/kindle_vault_sync/scanner.py
+src/kindle_vault_sync/sender.py
+src/kindle_vault_sync.egg-info/PKG-INFO
+src/kindle_vault_sync.egg-info/SOURCES.txt
+src/kindle_vault_sync.egg-info/dependency_links.txt
+src/kindle_vault_sync.egg-info/entry_points.txt
+src/kindle_vault_sync.egg-info/top_level.txt
+tests/test_brief.py
+tests/test_config.py

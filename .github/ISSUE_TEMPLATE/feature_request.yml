@@ -1,0 +1,40 @@
+name: Feature Request
+description: Suggest an improvement
+labels: [enhancement]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Short description of requested feature
+      placeholder: Add option to sort todos by source file
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to Solve
+      description: What problem does this feature solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe your ideal behavior and CLI/config changes
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any workaround or alternative you tried
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Optional notes, links, examples
