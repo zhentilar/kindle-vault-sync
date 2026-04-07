@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Configurable vault-to-Kindle digest sender"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { file = "LICENSE" }
 authors = [
   { name = "Kindle Vault Sync Contributors" }
 ]

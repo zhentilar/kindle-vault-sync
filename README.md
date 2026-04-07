@@ -5,7 +5,7 @@ Configurable Python tool that scans an Obsidian-style vault, merges:
 - unchecked todos
 - note content from recent files
 
-Then it generates an HTML digest and can email it as a Kindle attachment.
+It then generates an HTML digest and can email it as a Kindle attachment.
 
 ## Features
 
@@ -23,7 +23,7 @@ Then it generates an HTML digest and can email it as a Kindle attachment.
 - src/kindle_vault_sync: package source
 - config.example.json: sample configurable setup
 - .env.example: required secrets template
-- tests: basic test coverage
+- tests/: basic test coverage
 
 ## Requirements
 
@@ -38,7 +38,7 @@ Then it generates an HTML digest and can email it as a Kindle attachment.
 
 ## Quick Start
 
-1. Open folder:
+1. Open the repository folder:
    - kindle-vault-sync-public
 2. Create virtual environment:
    - python3 -m venv .venv
@@ -106,15 +106,15 @@ config.json fields:
 - Send:
   - kindle-vault-sync send --config config.json
 
-## Publishing
+## Release Checklist
 
-- Before making the repository public, follow RELEASE_CHECKLIST.md.
+- Before tagging or shipping a release, follow [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
 
 ## Contributing
 
-- Contribution guide: CONTRIBUTING.md
+- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Use GitHub issue templates for bug reports and feature requests.
 
 ## License
 
-MIT. See LICENSE.
+MIT. See [LICENSE](LICENSE).
